@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 5.2</title>
+  <style>
+    div {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+    }
+
+    .main-content .left-content {
+      background-color: green;
+      width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .main-content .left-content .small-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+
+    .main-content .right-content {
+      background-color: blue;
+      width: 60%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .main-content .description {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    let h1 = document.createElement("h1");
+    let text = document.createTextNode("Exercício 5.2 - JavaScript DOM");
+    h1.appendChild(text);
+    document.body.appendChild(h1);
+
+    let div = document.createElement("div");
+    div.classList.add("main-content");
+    document.body.appendChild(div);
+
+    let div2 = document.createElement("div");
+    div2.classList.add("center-content");
+    div.appendChild(div2);
+
+    let p = document.createElement("p");
+    p.innerText = "Eu sou gatona";
+    div2.appendChild(p);
+
+    let div3 = document.createElement("div");
+    div3.classList.add("left-content");
+    div.appendChild(div3);
+
+    let div4 = document.createElement("div");
+    div4.classList.add("right-content");
+    div.appendChild(div4);
+
+    let img = document.createElement("img");
+    img.src = "https://picsum.photos/200";
+    img.classList.add("small-image");
+    div3.appendChild(img);
+
+    let list = document.createElement("ul");
+    let numbers = [
+      "um",
+      "dois",
+      "três",
+      "quatro",
+      "cinco",
+      "seis",
+      "sete",
+      "oito",
+      "nove",
+      "dez",
+    ]
+    numbers.forEach(number => {
+      let node = document.createElement("li");
+      let text = document.createTextNode(number);
+      node.appendChild(text);
+      list.appendChild(node);
+    })
+    div4.appendChild(list);
+
+    for (let i = 0; i < 3; i++) {
+      let h3 = document.createElement("h3");
+      div.appendChild(h3);
+    }
+
+    h1.classList.add("title");
+
+    div.querySelectorAll("h3").forEach(element => element.classList.add("description"));
+
+    div.removeChild(div3);
+
+    div2.style.backgroundColor = "green";
+
+    div4.style.marginRight = "auto";
+
+    div2.parentElement.style.backgroundColor = "green";  
+
+    for (let i = 0; i < 2; i++) {
+      let ul = div4.getElementsByTagName("ul")[0];
+      ul.removeChild(ul.lastElementChild);
+    }
+  </script>
+</body>
+
+</html>
