@@ -15,12 +15,12 @@ describe('searchEmployee', () => {
         expect(() => { searchEmployee('1234-5', 'specialities') }).toThrow();
         expect(() => { searchEmployee('1234-5', 'specialities') })
             .toThrowError(new Error('ID não identificada'));
-    })
+    });
 
     it('should throw an error !detail', () => {
         expect(() => { searchEmployee('8579-6', 'managers') }).toThrow();
         expect(() => { searchEmployee('8579-6', 'managers') })
             .toThrowError(new Error('Informação indisponível'));
-    })
+    });
 
-})
+});
