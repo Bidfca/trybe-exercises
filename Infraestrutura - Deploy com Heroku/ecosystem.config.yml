@@ -1,0 +1,9 @@
+apps:
+
+- name: app
+  script: node server.js
+  exec_mode: cluster
+  instances: 4
+  watch: ./
+
+ # Ao alterar o arquivo ecosystem, é necessário deletar e iniciar novamente seu projeto do PM2 para que as alterações sejam aplicadas.
