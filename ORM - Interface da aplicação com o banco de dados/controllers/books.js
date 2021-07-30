@@ -3,7 +3,10 @@ const rescue = require('express-rescue');
 
 const getAll = rescue(async (_, res) => {
     try {
-        const books = await Book.findAll();
+        const books = await Book.findAll({ order: [
+            ['updatedAt', 'ASC'],
+            ['title', 'ASC']
+        ]});
 
         res.status(200).json(books);
     } catch (e) {
