@@ -1,8 +1,0 @@
-div.minhaclasse#meuid${conteudo}*3
-ul>(li>a{conteudo $}[href="#"]+p{conteudo})*10
-h100vh
-m10
-p10px
-df
-bg
-bgi
